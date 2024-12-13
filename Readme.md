@@ -30,7 +30,9 @@ pip install -r requirements.txt
 
 4. Add cdp_api_key.json file to import wallet
 
-5. run
+5. Update Story Protocol variables
+
+6. run
 ```
 crewai run
 ```
