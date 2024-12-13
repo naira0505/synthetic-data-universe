@@ -1,0 +1,67 @@
+research_task:
+  description: >
+    Conduct a thorough research about {topic}
+    Make sure you find any interesting and relevant information given
+    the current year is 2024.
+  expected_output: >
+    A list with 10 bullet points of the most relevant information about {topic}.
+  agent: researcher
+
+synthesize_data_task:
+  description: >
+    Generate high-quality synthetic JSONL conversation data based on provided private dataset provided to you
+    Follow the specified format and incorporate the instructed system and user tones.
+  expected_output: >
+    A JSONL file with at least 20 synthetic conversation entries
+    adhering to the specified schema and style guidelines.
+  agent: core_synth_data_gen
+  input_format: jsonl
+  output_format: jsonl
+
+process_payment_task:
+  description: >
+    Execute a secure crypto payment transaction between the core data generation agent
+    and the data provider. Confirm the settlement on-chain and produce a receipt.
+  expected_output: >
+    A transaction hash and a confirmation log detailing the successful payment
+    and updated balances for both parties.
+  agent: payment_facilitator
+
+manage_ip_license_task:
+  description: >
+    Apply Story Protocol licensing terms to all synthetic and original data involved.
+    Ensure proper attribution and compliance with licensing frameworks.
+  expected_output: >
+    A transaction hash of the IP of the dataset created by data 
+  agent: ip_licensing_agent
+
+data_provision_task_A:
+  description: >
+    Generate a proprietary dataset using Data Provider A's methods and save it as 'data_A.jsonl'.
+  expected_output: >
+    A JSONL file named 'data_A.jsonl' with at least 20 domain-specific entries.
+  agent: data_provider_A
+
+data_provision_task_B:
+  description: >
+    Generate a proprietary dataset using Data Provider B's methods and save it as 'data_B.jsonl'.
+  expected_output: >
+    A JSONL file named 'data_B.jsonl' with at least 20 specialized entries.
+  agent: data_provider_B
+
+final_decision_task:
+  description: >
+    Compare 'data_A.jsonl', 'data_B.jsonl' and 'output.jsonl' for quality and schema adherence.
+    Select the best one and document the evaluation process.
+  expected_output: >
+    A report detailing the evaluation process, selected dataset, and reasons for the choice. A one liner whether the data_provider_A is better or data_provider_B is better
+  agent: final_decision_agent
+
+validate_data_task:
+  description: >
+    Review generated synthetic datasets for adherence to the specified format,
+    quality standards, and privacy requirements. Identify any anomalies.
+  expected_output: >
+    A validation report detailing data quality metrics, highlighting inconsistencies,
+    and providing actionable recommendations for improvements.
+  agent: data_quality_agent
